@@ -49,8 +49,8 @@ async function onFirstLoad(event) {
   event.preventDefault();
   try {
     const res = await newArticles.fetchMostPopular();
-    const totalNumberPagesApi = res.results.length; // 20
-    valuePage.totalPages = Math.ceil(totalNumberPagesApi / numCardsOnPages); // 3
+    const totalNumberPagesApi = res.results.length;
+    valuePage.totalPages = Math.ceil(totalNumberPagesApi / numCardsOnPages);
 
     renderPagePagination(res, 'popular');
   } catch (error) {
